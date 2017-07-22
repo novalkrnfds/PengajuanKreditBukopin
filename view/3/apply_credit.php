@@ -1,321 +1,240 @@
-<div class="page-content page-wizard">
-  <div class="header">
-    <h2>Apply <strong>Credit</strong></h2>
-    <div class="breadcrumb-wrapper">
-      <ol class="breadcrumb">
-        <li><a href="index.php">Home</a>
-        </li>
-        <li class="active">Apply Credit</li>
-      </ol>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="panel">
-        <div class="panel-content">
-          <p class="m-t-10 m-b-20 f-16">Lengkapi semua data anda untuk dapat di tinjau dengan tim kami.</p>
-          <div class="tabs tabs-linetriangle">
-            <div class="tab-content">
-              <div class="tab-pane active" id="validation">
-                <form class="wizard wizard-validation" data-style="sea" method="post" role="form">
-                  <fieldset>
-                    <legend>Data Nasabah</legend>
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <label for="nama">Nama Lengkap <font color="red">*</font></label>
-                          <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Lengkap" required data-parsley-group="block0">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Tempat Lahir <font color="red">*</font></label>
-                          <input type="text" class="form-control" id="date" name="tmp_lahir" placeholder="Tempat Lahir" required data-parsley-group="block0">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">No. Identitas <font color="red">*</font></label>
-                          <input type="number" class="form-control" id="no_identitas" min="0" maxlength="16" name="no_identitas" placeholder="No. Identitas" required data-parsley-group="block0" >
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <label for="email">Agama <font color="red">*</font></label>
-                        	<select class="form-control" title="" name="agama" required data-parsley-group="block0">
-                        		<option value="">--- Pilih ---</option>
-                        		<option value="Islam">Islam</option>
-                        		<option value="Khatolik">Khatolik</option>
-                        		<option value="Protestan">Protestan</option>
-                        		<option value="Hindu">Hindu</option>
-                        		<option value="Budha">Hindu</option>
-                        		<option value="Lainnya">Lainnya</option>
-                        	</select>
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Tanggal Lahir <font color="red">*</font></label>
-                          <div class="prepend-icon">
-                            <input type="text" name="tgl_lahir" class="b-datepicker form-control" placeholder="Select a date..." required data-parsley-group="block0">
-                            <i class="icon-calendar"></i>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">No. NPWP</label>
-                          <input type="number" class="form-control" min="0" maxlength="16" id="npwp" name="npwp" placeholder="No. NPWP" required data-parsley-group="block0">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <div class="form-group">
-                          <label for="email">Alamat Saat ini</label>
-                          <textarea name="alamat" style="resize: none;" rows="3" placeholder="Alamat saat ini" class="form-control" title="" required data-parsley-group="block0"></textarea>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <label for="nama">No. Telepon <font color="red">*</font></label>
-                          <input type="text" class="form-control" id="notelp" name="notelp" placeholder="No. Telepon" required data-parsley-group="block0">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Status <font color="red">*</font></label>
-                          <select class="form-control" title="" name="status" required data-parsley-group="block0">
-                        		<option value="">--- Pilih ---</option>
-                        		<option value="Menikah">Menikah</option>
-                        		<option value="Belum Menikah">Belum Menikah</option>
-                        		<option value="Janda/Duda">Janda/Duda</option>
-                        	</select>
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Nama Ibu Kandung <font color="red">*</font></label>
-                          <input type="text" class="form-control" id="nm_ibu" name="nm_ibu" placeholder="Nama Ibu Kandung" required data-parsley-group="block0" >
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <label for="email">HP <font color="red">*</font></label>
-                          <input type="text" class="form-control" id="hp" name="hp" placeholder="HP" required data-parsley-group="block0">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Pendidikan Terakhir <font color="red">*</font></label>
-                          <select class="form-control" title="" name="pendidikan" required data-parsley-group="block0">
-                        		<option value="">--- Pilih ---</option>
-                        		<option value="SD">SD</option>
-                        		<option value="SLTP">SLTP</option>
-                        		<option value="SLTA">SLTA</option>
-                        		<option value="S1">S1</option>
-                        		<option value="S2">S2</option>
-                        	</select>
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Jumlah Tunggangan</label>
-                          <input type="number" class="form-control" min="0" maxlength="16" id="jml_tunggangan" name="jml_tunggangan" placeholder="Jumlah Tunggangan" required data-parsley-group="block0">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <div class="form-group">
-                          <label for="email">Alamat Korespodensi</label>
-                          <textarea name="alamat_korespodensi" style="resize: none;" rows="3" placeholder="Alamat Korespodensi" class="form-control" title="" required data-parsley-group="block0"></textarea>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Kepemilikan Rumah <font color="red">*</font></label>
-                          <select class="form-control" title="" name="kepemilikan_rumah" required data-parsley-group="block0">
-                        		<option value="">--- Pilih ---</option>
-                        		<option value="Sendiri">Sendiri</option>
-                        		<option value="Sewa/Kontrak">Sewa/Kontrak</option>
-                        		<option value="Orang tua">Orang tua</option>
-                        		<option value="Dinas">Dinas</option>
-                        		<option value="Lainnya">Lainnya</option>
-                        	</select>
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Lama Menetap</label>
-                          <input type="text" class="form-control" id="lama_menetap" name="lama_menetap" placeholder="Lama Menetap" required data-parsley-group="block0">
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset>
-                    <legend>Data Pekerjaan</legend>
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <label for="nama">Nama Perusahaan <font color="red">*</font></label>
-                          <input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan" placeholder="Nama Perusahaan" required data-parsley-group="block1">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">No. Fax <font color="red">*</font></label>
-                          <input type="text" class="form-control" id="no_fax" name="no_fax" placeholder="No. Fax" required data-parsley-group="block1">
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <label for="email">No. Telepon Kantor <font color="red">*</font></label>
-                          <input type="text" class="form-control" id="telp_kantor" name="telp_kantor" placeholder="No. Telepon Kantor" required data-parsley-group="block1">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Jenis Usaha</label>
-                          <input type="text" class="form-control" id="jenis_usaha" name="jenis_usaha" placeholder="Jenis Usaha" required data-parsley-group="block1">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <div class="form-group">
-                          <label for="email">Alamat Kantor</label>
-                          <textarea name="alamat_kantor" style="resize: none;" rows="3" placeholder="Alamat Kantor" class="form-control" title="" required data-parsley-group="block1"></textarea>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <label for="nama">Jabatan/pangkat <font color="red">*</font></label>
-                          <input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan" placeholder="Nama Perusahaan" required data-parsley-group="block1">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Masa Kerja <font color="red">*</font></label>
-                          <input type="text" class="form-control" id="masa_kerja" name="masa_kerja" placeholder="Masa Kerja" required data-parsley-group="block1">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Nama Atasan Langsung <font color="red">*</font></label>
-                          <input type="text" class="form-control" id="nm_atasan" name="masa_kerja" placeholder="Nama Atasan Langsung" required data-parsley-group="block1">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Nama Kepala Personalia <font color="red">*</font></label>
-                          <input type="text" class="form-control" id="nm_personalia" name="nm_personalia" placeholder="Nama Kepala Personalia" required data-parsley-group="block1">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Nama Perusahaan Sebelumnya <font color="red">*</font></label>
-                          <input type="text" class="form-control" id="nm_kantor_before" name="nm_kantor_before" placeholder="Nama Perusahaan Sebelumnya" required data-parsley-group="block1">
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <label for="email">Bidang Pekerjaan <font color="red">*</font></label>
-                        	<select class="form-control" title="" name="bdg_pekerjaan" required data-parsley-group="block1">
-                            <option value="">--- Pilih ---</option>
-                        		<option value="Humas">Humas</option>
-                        		<option value="Keuangan">Keuangan</option>
-                        		<option value="Pemasaran">Pemasaran</option>
-                        		<option value="Lainnya">Lainnya</option>
-                        	</select>
-                        </div>
-                        <div class="form-group">
-                          <label for="email">Status Bekerja <font color="red">*</font></label>
-                        	<select class="form-control" title="" name="status_bekerja" required data-parsley-group="block1">
-                        		<option value="">--- Pilih ---</option>
-                        		<option value="Karyawan Tetap">Karyawan Tetap</option>
-                        		<option value="Kontrak">Kontrak</option>
-                        	</select>
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">No. Telepon Atasan <font color="red">*</font></label>
-                          <input type="text" class="form-control" id="telp_atasan" name="telp_atasan" placeholder="No. Telepon Atasan" required data-parsley-group="block1">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">No. Telepon Personalia <font color="red">*</font></label>
-                          <input type="text" class="form-control" id="telp_personalia" name="telp_personalia" placeholder="No. Telepon Personalia" required data-parsley-group="block1">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Masa Kerja Di Perusahaan Sebelumnya <font color="red">*</font></label>
-                          <input type="text" class="form-control" id="masa_kerja_before" name="masa_kerja_before" placeholder="Masa Kerja Di Perusahaan Sebelumnya" required data-parsley-group="block1">
-                        </div>
-                      </div>
-                    </div>
-                    <div id="condition-error"></div>
-                  </fieldset>
-                  <fieldset>
-                    <legend>Data Penghasilan</legend>
-                    <label class="control-label">Penghasilan</label>
-                    <hr>
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <label for="nama">Pendapatan Pokok <font color="red">*</font></label>
-                          <input type="number" min="0" class="form-control" id="pendapatan_pokok" name="pendapatan_pokok" placeholder="Pendapatan Pokok" required data-parsley-group="block2">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Penghasilan Suami / Istri <font color="red">*</font></label>
-                          <input type="number" min="0" class="form-control" id="penghasilan_suami" name="penghasilan_suami" placeholder="Penghasilan Suami / Istri" required data-parsley-group="block2">
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <label for="email">Tunjangan / Pendapatan Lain <font color="red">*</font></label>
-                          <input type="number" min="0" class="form-control" id="tunjangan" name="tunjangan" placeholder="Tunjangan / Pendapatan Lain" required data-parsley-group="block2">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Total Pendapatan</label>
-                          <input type="number" min="0" class="form-control" id="total_pendapatan" name="total_pendapatan" placeholder="Total Pendapatan" required data-parsley-group="block2">
-                        </div>
-                      </div>
-                    </div>
-                    <br>
-                    <label class="control-label">Pengeluaran</label>
-                    <hr>
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <label for="nama">Biaya Rutin Pengeluaran <font color="red">*</font></label>
-                          <input type="number" min="0" class="form-control" id="rutin_pengeluaran" name="rutin_pengeluaran" placeholder="Biaya Rutin Pengeluaran" required data-parsley-group="block2">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Biaya Lain-lain <font color="red">*</font></label>
-                          <input type="number" min="0" class="form-control" id="lain_pengeluaran" name="lain_pengeluaran" placeholder="Biaya Lain-lain" required data-parsley-group="block2">
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <label for="email">Angsuran Lain <font color="red">*</font></label>
-                          <input type="number" min="0" class="form-control" id="angsuran_lain" name="angsuran_lain" placeholder="Angsuran Lain" required data-parsley-group="block2">
-                        </div>
-                        <div class="form-group">
-                          <label for="">Total Pengeluaran</label>
-                          <input type="number" min="0" class="form-control" id="total_pengeluaran" name="total_pengeluaran" placeholder="Total Pengeluaran" required data-parsley-group="block2">
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset>
-                    <legend>Pengajuan Kredit</legend>
-                    <label class="control-label">Bunga Saat Ini</label>
-                    <hr>
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <input type="number" min="0" class="form-control" id="bunga" name="bunga" placeholder="Bunga Saat Ini" readonly data-parsley-group="block3">
-                        </div>
-                        <br>
-                        <br>
-                        <br>
-                        <div class="form-group">
-                          <label class="" for="exampleInputName1">Permohonan Kredit Sebesar</label>
-                          <input type="number" min="0" class="form-control" id="" placeholder="Permohonan Kredit Sebesar" name="kredit_sebesat" data-parsley-group="block3" required>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <label class="" for="exampleInputCat1">Jangka Waktu</label>
-                          <input type="text" class="form-control" id="" name="jangka_waktu" placeholder="Jangka Waktu" data-parsley-group="block3" required>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                </form>
-              </div>
+<section id="content">
+
+    <div class="page page-dashboard">
+
+        <div class="pageheader">
+
+            <h2>Apply Credit</h2>
+
+            <div class="page-bar">
+
+                <ul class="page-breadcrumb">
+                    <li>
+                        <a href="index.php"><i class="fa fa-home"></i> e-Submission Bank Bukopin</a>
+                    </li>
+                    <li class="active">
+                        <a style="cursor:pointer;">Apply Credit</a>
+                    </li>
+                </ul>
             </div>
-          </div>
+
         </div>
-      </div>
+
+
+        <div class="pagecontent">
+
+            <div id="rootwizard" class="tab-container tab-wizard">
+                <ul class="nav nav-tabs nav-justified">
+                    <li><a href="#tab1" data-toggle="tab">Personal Information <span class="badge badge-default pull-right wizard-step">1</span></a></li>
+                    <li><a href="#tab2" data-toggle="tab">Address<span class="badge badge-default pull-right wizard-step">2</span></a></li>
+                    <li><a href="#tab3" data-toggle="tab">Education<span class="badge badge-default pull-right wizard-step">3</span></a></li>
+                    <li><a href="#tab4" data-toggle="tab">Contact<span class="badge badge-default pull-right wizard-step">4</span></a></li>
+                    <li><a href="#tab5" data-toggle="tab">EULA<span class="badge badge-default pull-right wizard-step">5</span></a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane" id="tab1">
+
+                        <form name="step1" role="form">
+
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="username">Name: </label>
+                                    <input type="text" name="name" id="name" class="form-control"
+                                           required>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="username">Username: </label>
+                                    <input type="text" name="username" id="username" class="form-control"
+                                           minlength="3"
+                                           maxlength="8"
+                                           required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="form-group col-md-6">
+                                    <label for="password">Password: </label>
+                                    <input type="password" name="password" id="password" class="form-control"
+                                           minlength="6"
+                                           required>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="passwordConfirm">Password confirmation: </label>
+                                    <input type="password" name="passwordConfirm" id="passwordConfirm" class="form-control"
+                                           data-parsley-equalto="#password"
+                                           required>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">About you: </label>
+                                <textarea class="form-control" rows="5" name="message" id="message" placeholder="Write something about you..."></textarea>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="tab-pane" id="tab2">
+
+                        <form name="step2" role="form">
+
+                            <div class="row">
+                                <div class="form-group col-md-8 mb-0">
+                                    <label for="street">Street: </label>
+                                    <input type="text" name="street" id="street" class="form-control" placeholder="Enter street address"
+                                           required>
+                                </div>
+                                <div class="form-group col-md-4 mb-0">
+                                    <label for="dnumber">Door no.: </label>
+                                    <input type="text" name="dnumber" id="dnumber" class="form-control" placeholder="Enter door number"
+                                           required>
+                                </div>
+                            </div>
+
+                            <div class="form-group mt-10">
+                                <label for="address2">Address Line 2: </label>
+                                <input type="text" name="address2" id="address2" class="form-control" placeholder="Enter secondary address">
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label for="city">City: </label>
+                                    <input type="text" name="city" id="city" class="form-control" placeholder="Enter city"
+                                           required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="state">State: </label>
+                                    <input type="text" name="state" id="state" class="form-control" placeholder="Enter state"
+                                           required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="zip">Zip: </label>
+                                    <input type="text" name="zip" id="zip" class="form-control" placeholder="Enter zip"
+                                           required>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="tab-pane" id="tab3">
+
+                        <form name="step3" role="form" novalidate>
+
+                            <h4 class="custom-font"><strong>Primary</strong> School</h4>
+
+                            <div class="row">
+                                <div class="form-group col-md-4 mb-0">
+                                    <label for="pr-subject">Subject: </label>
+                                    <input type="text" name="pr-subject" id="pr-subject" class="form-control">
+                                </div>
+                                <div class="form-group col-md-4 mb-0">
+                                    <label for="pr-name">School name: </label>
+                                    <input type="text" name="pr-name" id="pr-name" class="form-control"
+                                           required>
+                                </div>
+                                <div class="form-group col-md-2 mb-0">
+                                    <label for="prstart">Start Date: </label>
+                                    <input type="text" name="prstart" id="prstart" class="form-control" placeholder="YYYY-MM-DD"
+                                           pattern="/[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])$/">
+                                </div>
+                                <div class="form-group col-md-2 mb-0">
+                                    <label for="prend">End Date: </label>
+                                    <input type="text" name="prend" id="prend" class="form-control" placeholder="YYYY-MM-DD"
+                                           pattern="/[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])$/">
+                                </div>
+                            </div>
+
+                            <h4 class="custom-font"><strong>Secondary</strong> School</h4>
+
+                            <div class="row">
+                                <div class="form-group col-md-4 mb-0">
+                                    <label for="sc-subject">Subject: </label>
+                                    <input type="text" name="sc-subject" id="sc-subject" class="form-control">
+                                </div>
+                                <div class="form-group col-md-4 mb-0">
+                                    <label for="sc-name">School name: </label>
+                                    <input type="text" name="sc-name" id="sc-name" class="form-control">
+                                </div>
+                                <div class="form-group col-md-2 mb-0">
+                                    <label for="scstart">Start Date: </label>
+                                    <input type="text" name="scstart" id="scstart" class="form-control" placeholder="YYYY-MM-DD"
+                                           pattern="/[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])$/">
+                                </div>
+                                <div class="form-group col-md-2 mb-0">
+                                    <label for="scend">End Date: </label>
+                                    <input type="text" name="scend" id="scend" class="form-control" placeholder="YYYY-MM-DD"
+                                           pattern="/[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])$/">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="qualification">Other qualification: </label>
+                                <textarea class="form-control" rows="5" name="qualification" id="qualification"></textarea>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="tab-pane" id="tab4">
+
+                        <form name="step4" role="form" novalidate>
+
+                            <div class="row">
+                                <div class="form-group col-md-6 mb-0">
+                                    <label for="email">Email: </label>
+                                    <input type="email" name="email" id="email" class="form-control"
+                                           required>
+                                </div>
+                                <div class="form-group col-md-6 mb-0">
+                                    <label for="phone">Phone: </label>
+                                    <input type="text" name="phone" id="phone" class="form-control" placeholder="(XXX) XXXX XXX"
+                                           pattern="^[\d\+\-\.\(\)\/\s]*$">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="web">Website: </label>
+                                <input type="url" name="web" id="web" class="form-control" placeholder="http://">
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="tab-pane" id="tab5">
+
+                        <p class="well">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
+
+                        <form name="step5" role="form" novalidate>
+
+                            <div class="checkbox">
+                                <label class="checkbox checkbox-custom">
+                                    <input type="checkbox" name="agree" id="agree"
+                                           required><i></i> I agree to the <a href class="text-info">Terms of Service</a>
+                                </label>
+                            </div>
+
+                            <div class="checkbox">
+                                <label class="checkbox checkbox-custom">
+                                    <input type="checkbox" name="newsletter" id="newsletter"><i></i> Receive newsletter
+                                </label>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <ul class="pager wizard">
+                        <li class="previous"><button class="btn btn-default">Previous</button></li>
+                        <li class="next"><button class="btn btn-default">Next</button></li>
+                        <li class="next finish" style="display:none;"><button class="btn btn-success">Finish</button></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
     </div>
-  </div>
-</div>
+</section

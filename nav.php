@@ -1,14 +1,34 @@
-<?php
-  if(@$_SESSION['level'] == '1'){
+<div id="sidebar-wrap">
 
-  } else if(@$_SESSION['level'] == '2'){
+    <div class="panel-group slim-scroll" role="tablist">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#sidebarNav">
+                        Navigation <i class="fa fa-angle-up"></i>
+                    </a>
+                </h4>
+            </div>
+            <div id="sidebarNav" class="panel-collapse collapse in" role="tabpanel">
+                <div class="panel-body">
 
-  } else if(@$_SESSION['level'] == '3'){ ?>
-    <ul class="nav nav-sidebar">
-      <li class="<?php if(($_GET['menu'] == "") || $_GET['menu'] == "apply_credit") {echo "nav-active active"; }?>"><a href="index.php"><i class="icon-home"></i><span>Home</span></a></li>
-        <li class="<?php if($_GET['menu'] == "setting") {echo "nav-active active"; }?>"><a href="?menu=setting"><i class="fa fa-gear"></i><span>Setting</span></a></li>
-    </ul>
 
-<?php
-  }
-?>
+                    <!-- ===================================================
+                    ================= NAVIGATION Content ===================
+                    ==================================================== -->
+                    <ul id="navigation">
+                        <li class="active"><a href="index.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+                        <li><a href="calendar.html"><i class="fa fa-calendar-o"></i> <span>Calendar</span> <span class="label label-success">new events</span></a></li>
+                        <li><a href="charts.html"><i class="fa fa-bar-chart-o"></i> <span>Charts & Graphs</span></a></li>
+                    </ul>
+                    <!--/ NAVIGATION Content -->
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

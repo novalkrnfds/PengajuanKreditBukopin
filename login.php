@@ -4,74 +4,188 @@
 
 	if (empty($_SESSION['name']) AND empty($_SESSION['password'])){
 ?>
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+
+
+
     <head>
+
         <meta charset="utf-8">
-        <title>e-SUBMISSION BANK BUKOPIN</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>e-Submission Bukopin</title>
+        <link rel="icon" type="image/ico" href="assets/images/favicon.ico" />
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="" name="" />
-        <meta content="Bukopin" name="@novalkrnfds" />
-        <link rel="shortcut icon" href="assets/global/images/favicon.png">
-        <link href="assets/global/css/style.css" rel="stylesheet">
-        <link href="assets/global/css/ui.css" rel="stylesheet">
-        <link href="assets/global/plugins/bootstrap-loading/lada.min.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="assets/global/plugins/sweetalert/dist/sweetalert.css">
+
+
+
+
+        <!-- ============================================
+        ================= Stylesheets ===================
+        ============================================= -->
+        <!-- vendor css files -->
+        <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/vendor/animate.css">
+        <link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/js/vendor/animsition/css/animsition.min.css">
+
+        <!-- project main css files -->
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" type="text/css" href="assets/js/vendor/sweetalert/dist/sweetalert.css">
+        <!--/ stylesheets -->
+
+
+
+        <!-- ==========================================
+        ================= Modernizr ===================
+        =========================================== -->
+        <script src="assets/js/vendor/modernizr/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <!--/ modernizr -->
+
+
+
+
     </head>
-    <body class="account separate-inputs" data-page="login">
-        <!-- BEGIN LOGIN BOX -->
-        <div class="container" id="login-block">
-            <div class="row">
-                <div class="col-sm-6 col-md-4 col-md-offset-4">
-                    <div class="account-wall">
-                        <!-- <i class="user-img icons-faces-users-03"></i> -->
-                        <img src="assets/global/images/logo/Bank_Bukopin_logo.svg.png" style="width:100%">
-                        <h1 class="m-t-20">  </h1>
-                        <form class="form-signin" role="form" method="POST">
-                            <div class="append-icon">
-                                <input type="text" name="username" id="username" value="<?=$_POST['username'];?>" class="form-control form-white username" placeholder="Username" required>
-                                <i class="icon-user"></i>
-                            </div>
-                            <div class="append-icon m-b-20">
-                                <input type="password" name="password" class="form-control form-white password" placeholder="Password" required>
-                                <i class="icon-lock"></i>
-                            </div>
-                            <div class="append-icon m-b-20">
-                              <img src="assets/captcha/gambar.php">
-                            </div>
-                            <div class="append-icon m-b-20">
-                                <input type="text"  maxlength="5" name="captcha" class="form-control form-white username" placeholder="Ketik seluruh teks yang ada di gambar" required>
-                                <i class="icon-wrench"></i>
-                            </div>
-                            <input type="submit" name="login" id="submit-form" class="btn btn-lg btn-danger btn-block ladda-button" value="Login" data-style="expand-left">
-                            <div class="clearfix">
-                                <p class="pull-left m-t-20"><a href="register.php">Belum punya akun? Register disini.</a></p>
-                            </div>
-                        </form>
-                    		<?php
-                    			if(@$_POST['login']){
-                    				include "controller/loginController.php";
-                    				$main = new loginController();
-                    				$main->login();
-                    			}
-                    		?>
+
+
+
+
+
+    <body id="minovate" class="appWrapper">
+
+
+
+        <!-- ====================================================
+        ================= Application Content ===================
+        ===================================================== -->
+        <div id="wrap" class="animsition">
+
+
+
+
+            <div class="page page-core page-login">
+
+                <div class="text-center"><h3 class="text-light text-white"><span class="text-lightred">e-</span>Submission</h3></div>
+
+                <div class="container w-420 p-15 bg-white mt-40 text-center">
+
+
+                    <h2 class="text-light text-greensea">Bank Bukopin</h2>
+
+                    <form name="form" class="form-validation mt-20" novalidate method="post">
+
+                        <div class="form-group">
+                            <input type="email" class="form-control underline-input" value="<?=$_POST['email']?>" name="email" placeholder="Email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" placeholder="Password" name="password" class="form-control underline-input" required>
+                        </div>
+
+                        <div class="form-group text-left mt-20">
+                            <input type="submit" name="login" class="btn btn-greensea b-0 br-2 mr-5" value="Login" >
+                        </div>
+
+                    </form>
+                		<?php
+                			if(@$_POST['login']){
+                				include "controller/loginController.php";
+                				$main = new loginController();
+                				$main->login();
+                			}
+                		?>
+
+                    <div class="bg-slategray lt wrap-reset mt-40">
+                        <p class="m-0">
+                            <a href="signup.html" class="text">Belum memiliki akun? klik disini untuk registrasi</a>
+                        </p>
                     </div>
+
                 </div>
-            <!-- </div>
-            <p class="account-copyright">
-                <span>Copyright © 2015 </span><span>THEMES LAB</span>.<span>All rights reserved.</span>
-            </p> -->
+
+            </div>
+
+
+
         </div>
-        <script src="assets/global/plugins/jquery/jquery-1.11.1.min.js"></script>
-        <script src="assets/global/plugins/jquery/jquery-migrate-1.2.1.min.js"></script>
-        <script src="assets/global/plugins/gsap/main-gsap.min.js"></script>
-        <script src="assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/global/plugins/backstretch/backstretch.min.js"></script>
-        <script src="assets/global/plugins/bootstrap-loading/lada.min.js"></script>
-        <script src="assets/global/plugins/jquery-validation/jquery.validate.min.js"></script>
-        <script src="assets/global/plugins/jquery-validation/additional-methods.min.js"></script>
-        <script src="assets/global/plugins/sweetalert/dist/sweetalert.min.js"></script>
-        <!-- <script src="assets/global/js/pages/login-v1.js"></script> -->
+        <!--/ Application Content -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- ============================================
+        ============== Vendor JavaScripts ===============
+        ============================================= -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+
+        <script src="assets/js/vendor/jRespond/jRespond.min.js"></script>
+
+        <script src="assets/js/vendor/sparkline/jquery.sparkline.min.js"></script>
+
+        <script src="assets/js/vendor/slimscroll/jquery.slimscroll.min.js"></script>
+
+        <script src="assets/js/vendor/animsition/js/jquery.animsition.min.js"></script>
+
+        <script src="assets/js/vendor/screenfull/screenfull.min.js"></script>
+        <script src="assets/js/vendor/sweetalert/dist/sweetalert.min.js"></script>
+        <!--/ vendor javascripts -->
+
+
+
+
+        <!-- ============================================
+        ============== Custom JavaScripts ===============
+        ============================================= -->
+        <script src="assets/js/main.js"></script>
+        <!--/ custom javascripts -->
+
+
+
+
+
+
+        <!-- ===============================================
+        ============== Page Specific Scripts ===============
+        ================================================ -->
+        <script>
+            $(window).load(function(){
+
+
+            });
+        </script>
+        <!--/ Page Specific Scripts -->
+
+
+
+
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+
     </body>
 </html>
 
