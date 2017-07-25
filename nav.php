@@ -17,9 +17,15 @@
                     ================= NAVIGATION Content ===================
                     ==================================================== -->
                     <ul id="navigation">
-                        <li class="active"><a href="index.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-                        <li><a href="calendar.html"><i class="fa fa-calendar-o"></i> <span>Calendar</span> <span class="label label-success">new events</span></a></li>
-                        <li><a href="charts.html"><i class="fa fa-bar-chart-o"></i> <span>Charts & Graphs</span></a></li>
+                        <?php if($_SESSION['level'] == 1){ ?>
+                          <li class="<?php if($_GET["menu"] == ""){ echo "active";}?>"><a href="index.php"><i class="fa fa-dashboard"></i> <span>Beranda</span></a></li>
+                        <?php } else if($_SESSION['level'] == 2){ ?>
+                          <li class="<?php if($_GET["menu"] == ""){ echo "active";}?>"><a href="index.php"><i class="fa fa-dashboard"></i> <span>Beranda</span></a></li>
+                        <?php } else if($_SESSION['level'] == 3){ ?>
+                        <li class="<?php if(($_GET['id'])){ echo "active";}?>"><a href="index.php"><i class="fa fa-dashboard"></i> <span>Beranda</span></a></li>
+                        <li class="<?php if($_GET['menu'] == "apply_credit"){ echo "active";}?>"><a href="?menu=apply_credit&data=1"><i class="fa fa-gears"></i> <span>Apply Credit</span> </a></li>
+                        <li class="<?php if($_GET['menu'] == "setting"){ echo "active";}?>"><a href="?menu=setting"><i class="fa fa-briefcase"></i> <span>Setting</span> </a></li>
+                        <?php } ?>
                     </ul>
                     <!--/ NAVIGATION Content -->
 

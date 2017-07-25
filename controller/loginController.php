@@ -69,7 +69,7 @@ class loginController{
 	}
 
 	function register(){
-		$name = @$_POST['firstname']." ".@$_POST['lastname'];
+		$name = @$_POST['name'];
 		$email = @$_POST['email'];
 		$password = @$_POST['password'];
 

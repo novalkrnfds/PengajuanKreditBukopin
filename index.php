@@ -18,7 +18,7 @@
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Minovate - Admin Dashboard</title>
+        <title>e-Submission Credit Bank Bukopin</title>
         <link rel="icon" type="image/ico" href="assets/images/favicon.ico" />
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,6 +44,15 @@
         <link rel="stylesheet" href="assets/js/vendor/datatables/datatables.bootstrap.min.css">
         <link rel="stylesheet" href="assets/js/vendor/chosen/chosen.css">
         <link rel="stylesheet" href="assets/js/vendor/summernote/summernote.css">
+        <link rel="stylesheet" href="assets/js/vendor/chosen/chosen.css">
+        <link rel="stylesheet" href="assets/js/vendor/datetimepicker/css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="assets/js/vendor/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css">
+        <link rel="stylesheet" href="assets/js/vendor/datatables/extensions/Responsive/css/dataTables.responsive.css">
+        <link rel="stylesheet" href="assets/js/vendor/datatables/extensions/ColVis/css/dataTables.colVis.min.css">
+        <link rel="stylesheet" href="assets/js/vendor/datatables/extensions/TableTools/css/dataTables.tableTools.min.css">
+
+
+
 
         <!-- project main css files -->
         <link rel="stylesheet" href="assets/css/main.css">
@@ -357,6 +366,14 @@
         <script src="assets/js/vendor/parsley/parsley.min.js"></script>
         <script src="assets/js/vendor/form-wizard/jquery.bootstrap.wizard.min.js"></script>
 
+        <script src="assets/js/vendor/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+
+        <script src="assets/js/vendor/chosen/chosen.jquery.min.js"></script>
+
+        <script src="assets/js/vendor/filestyle/bootstrap-filestyle.min.js"></script>
+
+
+
         <!--/ vendor javascripts -->
 
 
@@ -367,6 +384,18 @@
         ============================================= -->
         <script src="assets/js/main.js"></script>
         <script src="assets/js/vendor/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
+        <script src="assets/js/vendor/datatables/js/jquery.dataTables.min.js"></script>
+        <script src="assets/js/vendor/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
+        <script src="assets/js/vendor/datatables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+        <script src="assets/js/vendor/datatables/extensions/ColVis/js/dataTables.colVis.min.js"></script>
+        <script src="assets/js/vendor/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+        <script src="assets/js/vendor/datatables/extensions/dataTables.bootstrap.js"></script>
+
+
+
 
         <!--/ custom javascripts -->
 
@@ -452,6 +481,15 @@
                     height: 143   //set editable area's height
                 });
                 //*load wysiwyg editor
+
+								var table2 = $('#editable-usage');
+
+                var oTable = $('#editable-usage').DataTable({
+                    "aoColumnDefs": [
+                      { 'bSortable': false, 'aTargets': [ "no-sort" ] }
+                    ]
+                });
+
             });
 
             $(window).load(function(){
@@ -499,6 +537,60 @@
                 });
 
             });
+
+            (function (global) {
+
+            	if(typeof (global) === "undefined")
+            	{
+            		throw new Error("window is undefined");
+            	}
+
+                var _hash = "!";
+                var noBackPlease = function () {
+                    global.location.href += "#";
+
+            		// making sure we have the fruit available for juice....
+            		// 50 milliseconds for just once do not cost much (^__^)
+                    global.setTimeout(function () {
+                        global.location.href += "!";
+                    }, 50);
+                };
+
+            	// Earlier we had setInerval here....
+                global.onhashchange = function () {
+                    if (global.location.hash !== _hash) {
+                        global.location.hash = _hash;
+                    }
+                };
+
+                global.onload = function () {
+
+            		noBackPlease();
+
+            		// disables backspace on page except on input fields and textarea..
+            		document.body.onkeydown = function (e) {
+                        var elm = e.target.nodeName.toLowerCase();
+                        if (e.which === 8 && (elm !== 'input' && elm  !== 'textarea')) {
+                            e.preventDefault();
+                        }
+                        // stopping event bubbling up the DOM tree..
+                        e.stopPropagation();
+                    };
+
+                };
+
+            })(window);
+
+
+        		function totalPendapatan() {
+          		// var pokok = document.getElementById('pendapatan_pokok').value;
+          		// var tunjangan = document.getElementById('tunjangan').value;
+          		// var penghasilan = document.getElementById('penghasilan').value;
+              //
+          		// var total = Math.ceil(pokok + tunjangan + penghasilan);
+              //
+          		// document.getElementById('total_penghasilan').value = total;
+        		}
 
         </script>
         <!--/ Page Specific Scripts -->

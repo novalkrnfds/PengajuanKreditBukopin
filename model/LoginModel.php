@@ -24,7 +24,7 @@
 		function register($email, $password, $name){
 			$md5pass = md5($email."bukopin".$password);
 
-			$insertNasabah = mysql_query("insert into tb_nasabah values ('', '$name', '', '', '', '', '', '', '', '', '', '', '', '', '', '' ,'')");
+			$insertNasabah = mysql_query("insert into tb_nasabah values ('', '$name', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '' ,'')");
 			$getId = mysql_insert_id();
 
 			$query = "insert into user_login values ('', '$name', '$email', '$md5pass', 3, '$getId')";

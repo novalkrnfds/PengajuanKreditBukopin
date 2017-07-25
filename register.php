@@ -1,9 +1,3 @@
-<?php
-	session_start();
-	error_reporting(0);
-
-	if (empty($_SESSION['name']) AND empty($_SESSION['password'])){
-?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -16,10 +10,13 @@
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>e-Submission Bukopin</title>
+        <title>Minovate - Admin Dashboard</title>
         <link rel="icon" type="image/ico" href="assets/images/favicon.ico" />
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
 
         <!-- ============================================
         ================= Stylesheets ===================
@@ -32,7 +29,6 @@
 
         <!-- project main css files -->
         <link rel="stylesheet" href="assets/css/main.css">
-        <link rel="stylesheet" type="text/css" href="assets/js/vendor/sweetalert/dist/sweetalert.css">
         <!--/ stylesheets -->
 
 
@@ -56,6 +52,24 @@
 
 
 
+
+
+
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+
+
+
+
+
+
+
+
+
+
         <!-- ====================================================
         ================= Application Content ===================
         ===================================================== -->
@@ -70,37 +84,47 @@
 
                 <div class="container w-420 p-15 bg-white mt-40 text-center">
 
-
                     <h2 class="text-light text-greensea">Bank Bukopin</h2>
 
-                    <form name="form" class="form-validation mt-20" novalidate method="post">
+                    <form name="form" method="post" class="form-validation mt-20">
+
+                        <p class="help-block text-left">
+                            Enter your personal details below:
+                        </p>
 
                         <div class="form-group">
-                            <input type="email" class="form-control underline-input" value="<?=$_POST['email']?>" name="email" placeholder="Email" required>
+                            <input type="text" name="name" class="form-control underline-input" placeholder="Full Name" required>
                         </div>
 
                         <div class="form-group">
-                            <input type="password" placeholder="Password" name="password" class="form-control underline-input" required>
+                            <input type="email" name="email" class="form-control underline-input" placeholder="Email" required>
                         </div>
 
-                        <div class="form-group text-left mt-20">
-                            <input type="submit" name="login" class="btn btn-greensea b-0 br-2 mr-5" value="Login" >
+                        <div class="form-group">
+                            <input type="password" name="password" placeholder="Password" class="form-control underline-input" required>
+                        </div>
+
+                        <div class="form-group text-left">
+                            <label class="checkbox checkbox-custom-alt checkbox-custom-sm inline-block">
+                                <input type="checkbox" required><i></i> I agree to the <a href="javascript:;">Terms of Service</a> &amp; <a href="javascript:;">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                        <div class="bg-slategray lt wrap-reset mt-20 text-left">
+                            <p class="m-0">
+                                <input type="submit" name="regist" value="Submit" class="btn btn-greensea b-0 text-uppercase pull-right">
+                                <a href="login.php" class="btn btn-lightred b-0 text-uppercase">Back</a>
+                            </p>
                         </div>
 
                     </form>
                 		<?php
-                			if(@$_POST['login']){
+                			if(@$_POST['regist']){
                 				include "controller/loginController.php";
                 				$main = new loginController();
-                				$main->login();
+                				$main->register();
                 			}
                 		?>
-
-                    <div class="bg-slategray lt wrap-reset mt-40">
-                        <p class="m-0">
-                            <a href="register.php" class="text">Belum memiliki akun? klik disini untuk registrasi</a>
-                        </p>
-                    </div>
 
                 </div>
 
@@ -141,7 +165,6 @@
         <script src="assets/js/vendor/animsition/js/jquery.animsition.min.js"></script>
 
         <script src="assets/js/vendor/screenfull/screenfull.min.js"></script>
-        <script src="assets/js/vendor/sweetalert/dist/sweetalert.min.js"></script>
         <!--/ vendor javascripts -->
 
 
@@ -170,6 +193,10 @@
         <!--/ Page Specific Scripts -->
 
 
+
+
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
@@ -181,9 +208,3 @@
 
     </body>
 </html>
-
-<?php
-}else{
-	header("location:index.php");
-}
-?>
