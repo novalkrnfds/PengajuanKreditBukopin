@@ -597,6 +597,25 @@
                     $(".modal-body #idnasabah").val( idnasabah );
                 });
 
+
+                $(document).on("click", ".modal-marketing", function () {
+                    var idmarketing = $(this).data('id');
+                    var namamarketing = $(this).data('name');
+                    var alamatmarketing = $(this).data('alamat');
+                    var kontakmarketing = $(this).data('kontak');
+                    var email = $(this).data('email');
+
+                    $(".modal-body #idmarketing").val( idmarketing );
+                    $(".modal-body #namamarketing").val( namamarketing );
+                    $(".modal-body #alamatmarketing").val( alamatmarketing );
+                    $(".modal-body #kontakmarketing").val( kontakmarketing );
+                    $(".modal-body #email").val( email );
+                });
+
+                $(document).on("click", ".delete-marketing", function () {
+                    var id_marketing = $(this).data('id');
+                    $(".modal-body #id_marketing").val( id_marketing );
+                });
         </script>
         <!--/ Page Specific Scripts -->
 

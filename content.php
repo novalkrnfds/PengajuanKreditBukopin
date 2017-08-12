@@ -19,6 +19,10 @@
 	if(@$_SESSION['level'] == '1'){
 		if($menu == ''){
 			include "view/1/home.php";
+		} else if($menu == 'setting'){
+			include "view/1/setting.php";
+		} else if($menu == 'manage_marketing'){
+			include "view/1/marketing.php";
 		} else {
 			?> <script type='text/javascript'> setTimeout(function () { swal({ title: 'Error!', text:  'Not Found', type: 'error', timer: 3000, showConfirmButton: false }); },10); window.setTimeout(function(){
                     window.location.replace('index.php'); } ,2000); </script><?php

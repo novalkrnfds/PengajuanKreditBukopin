@@ -103,7 +103,7 @@
             
             <form action="index.php" name="modal_popup" enctype="multipart/form-data" method="POST">
                 <div class="modal-header">
-                    <h3 class="modal-title custom-font">Update Status Pengajuan Kredit ()</h3>
+                    <h3 class="modal-title custom-font">Update Status Pengajuan Kredit</h3>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">

@@ -25,8 +25,9 @@ class loginController{
 			@$_SESSION['name'] 			= $data['name'];
 			@$_SESSION['email'] 		= $data['email'];
 			@$_SESSION['level'] 		= $data['level'];
-			@$_SESSION['id_nasabah']= $data['id_nasabah'];
-			@$_SESSION['id_marketing'] 			= $data['id_marketing'];
+			@$_SESSION['id_nasabah'] 	= $data['id_nasabah'];
+			@$_SESSION['id'] 			= $data['id'];
+			@$_SESSION['id_marketing'] 	= $data['id_marketing'];
 
 			echo "<script type='text/javascript'>
 					setTimeout(function () {

@@ -1,7 +1,7 @@
 <?php 
-    $idnasabah = $_SESSION['id_nasabah'];
+    $iduser = $_SESSION['id'];
     
-    $select = mysql_query("select id,email,password from user_login where id_nasabah = '$idnasabah'");
+    $select = mysql_query("select id,email,password from user_login where id = '$iduser'");
     $data = mysql_fetch_array($select);
 
     if(isset($_POST['changePass'])){

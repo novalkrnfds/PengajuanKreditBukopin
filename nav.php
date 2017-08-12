@@ -19,6 +19,7 @@
                     <ul id="navigation">
                         <?php if($_SESSION['level'] == 1){ ?>
                           <li class="<?php if($_GET["menu"] == ""){ echo "active";}?>"><a href="index.php"><i class="fa fa-dashboard"></i> <span>Beranda</span></a></li>
+                          <li class="<?php if($_GET["menu"] == "manage_marketing"){ echo "active";}?>"><a href="?menu=manage_marketing"><i class="fa fa-users"></i> <span>Manage Marketing</span></a></li>
                           <li class="<?php if($_GET['menu'] == "setting"){ echo "active";}?>"><a href="?menu=setting"><i class="fa fa-briefcase"></i> <span>Setting</span> </a></li>
                         <?php } else if($_SESSION['level'] == 2){ ?>
                           <li class="<?php if(($_GET["menu"] == "") || ($_GET["menu"] == "view_detail")){ echo "active";}?>"><a href="index.php"><i class="fa fa-stumbleupon"></i> <span>List Pengajuan Kredit</span></a></li>
