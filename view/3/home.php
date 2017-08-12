@@ -42,7 +42,7 @@
 
                     <!-- tile header -->
                     <div class="tile-header dvd dvd-btm">
-                        <h1 class="custom-font"><strong>Status </strong>Pengajuan</h1>
+                        <h1 class="custom-font"><strong>Status </strong>Pengajuan Kredit</h1>
                     </div>
                     <!-- /tile header -->
 
@@ -71,15 +71,19 @@
                                       <th>Permohonan Kredit</th>
                                       <th>jangka Waktu</th>
                                       <th>Status</th>
+                                      <th>Action</th>
                                   </tr>
                               </thead>
                               <tbody>
                                 <?php if($count > 0){?>
                                 <tr class="odd gradeX">
                                     <td><?=$data['nama']?></td>
-                                    <td><?=$data['permohonan']?></td>
+                                    <td>Rp. <?=number_format($data['permohonan'], 0, ',', '.')?></td>
                                     <td><?=$data['jangka_waktu']?></td>
                                     <td><?=$data['status']?></td>
+                                    <td>
+                                        <a href="?menu=view_detail&id=" class="text-success text-uppercase text-strong text-sm mr-10" >Lihat</a>
+                                    </td>
                                 </tr>
                                 <?php } ?>
                               </tbody>

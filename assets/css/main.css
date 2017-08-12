@@ -11456,7 +11456,7 @@ blockquote p {
 .nav-tabs > li.active > a:focus {
   box-shadow: inset 0 -3px 0 #428bca;
   border: 0;
-  background-color: #e8e8e8;
+  background-color: #fff;
 }
 
 .nav-tabs > li.active:after {

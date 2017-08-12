@@ -19,8 +19,10 @@
                     <ul id="navigation">
                         <?php if($_SESSION['level'] == 1){ ?>
                           <li class="<?php if($_GET["menu"] == ""){ echo "active";}?>"><a href="index.php"><i class="fa fa-dashboard"></i> <span>Beranda</span></a></li>
+                          <li class="<?php if($_GET['menu'] == "setting"){ echo "active";}?>"><a href="?menu=setting"><i class="fa fa-briefcase"></i> <span>Setting</span> </a></li>
                         <?php } else if($_SESSION['level'] == 2){ ?>
-                          <li class="<?php if($_GET["menu"] == ""){ echo "active";}?>"><a href="index.php"><i class="fa fa-dashboard"></i> <span>Beranda</span></a></li>
+                          <li class="<?php if(($_GET["menu"] == "") || ($_GET["menu"] == "view_detail")){ echo "active";}?>"><a href="index.php"><i class="fa fa-stumbleupon"></i> <span>List Pengajuan Kredit</span></a></li>
+                          <li class="<?php if($_GET['menu'] == "setting"){ echo "active";}?>"><a href="?menu=setting"><i class="fa fa-briefcase"></i> <span>Setting</span> </a></li>
                         <?php } else if($_SESSION['level'] == 3){ ?>
                         <li class="<?php if(($_GET['id'])){ echo "active";}?>"><a href="index.php"><i class="fa fa-dashboard"></i> <span>Beranda</span></a></li>
                         <li class="<?php if($_GET['menu'] == "apply_credit"){ echo "active";}?>"><a href="?menu=apply_credit&data=1"><i class="fa fa-gears"></i> <span>Apply Credit</span> </a></li>

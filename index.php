@@ -592,6 +592,11 @@
           		// document.getElementById('total_penghasilan').value = total;
         		}
 
+                $(document).on("click", ".open-modal", function () {
+                    var idnasabah = $(this).data('id');
+                    $(".modal-body #idnasabah").val( idnasabah );
+                });
+
         </script>
         <!--/ Page Specific Scripts -->
 
@@ -609,6 +614,7 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X','auto');ga('send','pageview');
         </script>
+        
 
     </body>
 </html>
