@@ -1,14 +1,12 @@
 <?php
 	session_start();
 	include "controller/loginController.php";
-	//include "controller/homeController.php";
 	?>
 		<link rel="stylesheet" type="text/css" href="assets/js/vendor/sweetalert/dist/sweetalert.css">
 		<script src="assets/js/vendor/sweetalert/dist/sweetalert.min.js"></script>
 	<?php
 
 	$login = new loginController();
-	//$home  = new homeController();
 
 	$menu	= @$_GET['menu'];
 	$act 	= @$_GET['act'];
@@ -51,6 +49,8 @@
 			include "view/3/apply_credit.php";
 		} else if($menu == 'setting'){
 			include "view/3/setting.php";
+		} else if($menu == 'view_detail'){
+			include "view/3/viewdetail.php";
 		} else {
 			?> <script type="text/javascript">alert("Not Found"); window.location.href = "index.php";</script> <?php
 		}

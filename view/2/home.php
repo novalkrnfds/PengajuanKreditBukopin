@@ -1,9 +1,20 @@
 <?php
-
-  $select = mysql_query("SELECT a.id_kredit, a.id_nasabah, a.permohonan, a.jangka_waktu, b.nama, c.status FROM tb_kredit as a
+    $select = mysql_query("SELECT a.id_kredit, a.id_nasabah, a.permohonan, a.jangka_waktu, b.nama, c.status FROM tb_kredit as a
                          INNER JOIN tb_nasabah as b ON a.id_nasabah = b.id_nasabah INNER JOIN tb_status_validasi as c
-                         ON a.id_marketing = c.id_marketing order by b.nama");
-  $count = mysql_num_rows($select);
+                         ON a.id_marketing = c.id_marketing GROUP by a.id_kredit ORDER by c.datetime DESC");
+    $count = mysql_num_rows($select);
+
+    if(isset($_POST['save'])){
+        $save = mysql_query("insert into tb_status_validasi values ('','$_POST[id_kredit]', '$_SESSION[id_marketing]', '$_POST[status]', '$_POST[keterangan]', 'now()')");
+
+        if($save){
+
+        } else {
+            
+        }
+    } else {
+        unset($_POST['save']);
+    }
 ?>
 
 <section id="content">
@@ -68,10 +79,10 @@
                                     <td><?=$data['nama']?></td>
                                     <td>Rp. <?=number_format($data['permohonan'], 0, ',', '.')?></td>
                                     <td><?=$data['jangka_waktu']?></td>
-                                    <td><?=$data['status']?></td>
+                                    <td><?php if($data['status'] != "Approved"){ echo "On process"; } else { echo "Approveds";}?></td>
                                     <td class="actions">
                                         <a href="?menu=view_detail&id=<?=$data['id_nasabah']?>" class="text-success text-uppercase text-strong text-sm mr-10" >Lihat</a>
-                                        <a href="#" data-name="<?=$data['nama']?>" data-id="<?=$data['id_nasabah']?>" data-toggle="modal" data-target="#myModal" class="open-modal text-danger text-uppercase text-strong text-sm mr-10" >Update</a>
+                                        <a href="#" data-name="<?=$data['nama']?>" data-id="<?=$data['id_kredit']?>" data-toggle="modal" data-target="#myModal" class="open-modal text-danger text-uppercase text-strong text-sm mr-10" >Update</a>
                                     </td>
                                 </tr>
                                 <?php } ?>
@@ -109,7 +120,7 @@
                     <div class="form-group">
                         <div class="form-group" style="padding-bottom: 10px;">
                             
-                            <input type="hidden" name="idnasabah" id="idnasabah">
+                            <input type="text" name="id_kredit" id="idkredit">
 
                             <label>Status Pengajuan Kredit</label>
                             <select name="status" class="form-control" placeholder="Status Validasi" required/>

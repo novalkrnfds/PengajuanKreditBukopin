@@ -27,7 +27,7 @@
 			$insertNasabah = mysql_query("insert into tb_nasabah values ('', '$name', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '' ,'')");
 			$getId = mysql_insert_id();
 
-			$query = "insert into user_login values ('', '$name', '$email', '$md5pass', 3, '$getId')";
+			$query = "insert into user_login values ('', '$name', '$email', '$md5pass', 3, '$getId', NULL)";
 			return $this->execute($query);
 		}
 

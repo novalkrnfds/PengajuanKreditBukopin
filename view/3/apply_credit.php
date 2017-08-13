@@ -2,7 +2,7 @@
     $idnasabah = $_SESSION['id_nasabah'];
 
     //get data nasabah
-    $sql  = mysql_query("SELECT * FROM tb_nasabah as a, tb_pekerjaan as b, tb_penghasilan as c WHERE a.id_nasabah = b.id_nasabah AND a.id_nasabah = c.id_nasabah AND a.id_nasabah = '$idnasabah'");
+    $sql  = mysql_query("SELECT * FROM tb_nasabah as a LEFT OUTER JOIN tb_pekerjaan as b ON a.id_nasabah = b.id_nasabah LEFT OUTER JOIN tb_penghasilan as c ON a.id_nasabah = c.id_nasabah WHERE a.id_nasabah = '$idnasabah'");
     $data = mysql_fetch_array( $sql);
 
     //get id_kredit by id_nasabah for disabled field
@@ -119,7 +119,7 @@
                 $savedetailkredit = mysql_query("insert into tb_detailkredit values('', $idnasabah, $getId)");
 
                 //save default ke status validasi
-                $savestatus = mysql_query("insert into tb_status_validasi values ('', $getId, 1, 'Menunggu verifikasi', '-')");
+                $savestatus = mysql_query("insert into tb_status_validasi values ('', $getId, 1, 'Menunggu verifikasi', '-', 'now()')");
                 
                 //kondisi, apakah save berhasil
                 if($savekredit && $savedokumen && $savedetailkredit && $savestatus){

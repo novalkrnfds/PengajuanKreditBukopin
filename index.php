@@ -593,8 +593,8 @@
         		}
 
                 $(document).on("click", ".open-modal", function () {
-                    var idnasabah = $(this).data('id');
-                    $(".modal-body #idnasabah").val( idnasabah );
+                    var idkredit = $(this).data('id');
+                    $(".modal-body #idkredit").val( idkredit );
                 });
 
 
