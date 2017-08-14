@@ -1,11 +1,20 @@
 <?php
-  $idnasabah = $_SESSION['id_nasabah'];
 
-  $select = mysql_query("SELECT * FROM tb_kredit as a
-                         INNER JOIN tb_nasabah as b ON a.id_nasabah = b.id_nasabah INNER JOIN tb_status_validasi as c
-                         ON a.id_marketing = c.id_marketing WHERE b.id_nasabah = '$idnasabah' order by c.datetime desc");
-  $data = mysql_fetch_array($select);
-  $count = mysql_num_rows($select);
+    $status = array('0' => "Menunggu Verifikasi",
+                        '1' => "Sedang di proses verifikasi",
+                        '2' => "Telah diverifikasi, dan dalam pengecekan dokumen",
+                        '3' => "Sedang dalam tahap survey rumah",
+                        '4' => "Approved",
+                        '5' => "Rejected"
+                );
+    
+    $idnasabah = $_SESSION['id_nasabah'];
+
+    $select = mysql_query("SELECT * FROM tb_kredit as a
+                            INNER JOIN tb_nasabah as b ON a.id_nasabah = b.id_nasabah INNER JOIN tb_status_validasi as c
+                            ON a.id_marketing = c.id_marketing WHERE b.id_nasabah = '$idnasabah' order by c.datetime desc");
+    $data = mysql_fetch_array($select);
+    $count = mysql_num_rows($select);
 ?>
 
 <section id="content">
@@ -80,7 +89,7 @@
                                     <td><?=$data['nama']?></td>
                                     <td>Rp. <?=number_format($data['permohonan'], 0, ',', '.')?></td>
                                     <td><?=$data['jangka_waktu']?></td>
-                                    <td><?=$data['status']?></td>
+                                    <td><?=$status[$data['status']]?></td>
                                     <td>
                                         <a href="#" data-toggle="modal" data-target="#myModal" class="text-success text-uppercase text-strong text-sm mr-10" >Detail</a>
                                     </td>
@@ -176,7 +185,7 @@
                                     <div class="col-md-4">
                                         <p class="text-uppercase text-strong mb-10 custom-font">Status Saat Ini</p>
                                         <ul class="list-unstyled text-default lt mb-20">
-                                            <li><?=$data['status']?></li>
+                                            <li><?=$status[$data['status']]?></li>
 
                                         </ul>
                                     </div>
@@ -215,7 +224,7 @@
                                         ?>
                                             <tr>
                                                 <td style="width:30%"><?=date("d-m-Y H:i", strtotime($r['datetime']))?></td>
-                                                <td><?=$r['status']?></td>
+                                                <td><?=$status[$r['status']]?></td>
                                             </tr>
                                         <?php } ?>
                                         </tbody>

@@ -1,16 +1,24 @@
 <?php
-    $select = mysql_query("SELECT a.id_kredit, a.id_nasabah, a.permohonan, a.jangka_waktu, b.nama, c.status FROM tb_kredit as a
-                         INNER JOIN tb_nasabah as b ON a.id_nasabah = b.id_nasabah INNER JOIN tb_status_validasi as c
-                         ON a.id_marketing = c.id_marketing GROUP by a.id_kredit ORDER by c.datetime DESC");
+    $status = array('0' => "Menunggu Verifikasi",
+                    '1' => "Sedang di proses verifikasi",
+                    '2' => "Telah diverifikasi, dan dalam pengecekan dokumen",
+                    '3' => "Sedang dalam tahap survey rumah",
+                    '4' => "Approved",
+                    '5' => "Rejected"
+              );
+
+    $select = mysql_query("SELECT a.id_kredit, max(a.datetime) as datetime, MAX(a.status) AS status, b.*, c.*
+    FROM tb_status_validasi a INNER JOIN tb_kredit b ON a.id_kredit = b.id_kredit INNER JOIN tb_nasabah c ON b.id_nasabah = c.id_nasabah");
     $count = mysql_num_rows($select);
 
     if(isset($_POST['save'])){
-        $save = mysql_query("insert into tb_status_validasi values ('','$_POST[id_kredit]', '$_SESSION[id_marketing]', '$_POST[status]', '$_POST[keterangan]', 'now()')");
+        $save = mysql_query("insert into tb_status_validasi values ('','$_POST[id_kredit]', '$_SESSION[id_marketing]', '$_POST[status]', '$_POST[keterangan]', now())");
 
         if($save){
-
+            echo "<script type='text/javascript'> setTimeout(function () { swal({ title: 'Update status berhasil', text:  'Mohon tunggu', type: 'success', timer: 3000, showConfirmButton: false }); },10); window.setTimeout(function(){
+                    window.location.replace('index.php'); } ,2000); </script>";
         } else {
-            
+            echo "<script type='text/javascript'> swal({ title: 'Error!', text: 'Update status gagal', type: 'error', confirmButtonText: 'Ok' }); </script>";
         }
     } else {
         unset($_POST['save']);
@@ -79,7 +87,7 @@
                                     <td><?=$data['nama']?></td>
                                     <td>Rp. <?=number_format($data['permohonan'], 0, ',', '.')?></td>
                                     <td><?=$data['jangka_waktu']?></td>
-                                    <td><?php if($data['status'] != "Approved"){ echo "On process"; } else { echo "Approveds";}?></td>
+                                    <td><?php echo $status[$data['status']]?></td>
                                     <td class="actions">
                                         <a href="?menu=view_detail&id=<?=$data['id_nasabah']?>" class="text-success text-uppercase text-strong text-sm mr-10" >Lihat</a>
                                         <a href="#" data-name="<?=$data['nama']?>" data-id="<?=$data['id_kredit']?>" data-toggle="modal" data-target="#myModal" class="open-modal text-danger text-uppercase text-strong text-sm mr-10" >Update</a>
@@ -120,20 +128,21 @@
                     <div class="form-group">
                         <div class="form-group" style="padding-bottom: 10px;">
                             
-                            <input type="text" name="id_kredit" id="idkredit">
+                            <input type="hidden" name="id_kredit" id="idkredit">
 
                             <label>Status Pengajuan Kredit</label>
                             <select name="status" class="form-control" placeholder="Status Validasi" required/>
                                 <option value="">--- Pilih ---</option>
-                                <option value="Telah diverifikasi, dan dalam pengecekan dokumen">Telah diverifikasi, dan dalam pengecekan dokumen</option>
-                                <option value="Sedang dalam tahap survey rumah">Sedang dalam tahap survey rumah</option>
-                                <option value="Approved">Approved</option>
-                                <option value="Rejected">Rejected</option>
+                                <option value="1">Sedang di proses verifikasi</option>
+                                <option value="2">Telah diverifikasi, dan dalam pengecekan dokumen</option>
+                                <option value="3">Sedang dalam tahap survey rumah</option>
+                                <option value="4">Approved</option>
+                                <option value="5">Rejected</option>
                             </select>
                         </div>
                         <div class="form-group" style="padding-bottom: 10px;">
                             <label>Keterangan</label>
-                            <textarea class="form-control" style="resize:none;" name="keterangan" rows="3" placeholder="Keterangan" required></textarea>
+                            <textarea class="form-control" style="resize:none;" name="keterangan" rows="3" placeholder="Keterangan"></textarea>
                         </div>
                     </div>
                 </div>

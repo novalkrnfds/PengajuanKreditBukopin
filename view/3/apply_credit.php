@@ -119,7 +119,7 @@
                 $savedetailkredit = mysql_query("insert into tb_detailkredit values('', $idnasabah, $getId)");
 
                 //save default ke status validasi
-                $savestatus = mysql_query("insert into tb_status_validasi values ('', $getId, 1, 'Menunggu verifikasi', '-', 'now()')");
+                $savestatus = mysql_query("insert into tb_status_validasi values ('', $getId, 1, '0', '-', now())");
                 
                 //kondisi, apakah save berhasil
                 if($savekredit && $savedokumen && $savedetailkredit && $savestatus){
