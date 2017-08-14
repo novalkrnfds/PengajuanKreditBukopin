@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 25 Jul 2017 pada 17.22
+-- Generation Time: 14 Agu 2017 pada 17.27
 -- Versi Server: 10.1.16-MariaDB
 -- PHP Version: 5.5.38
 
@@ -32,6 +32,13 @@ CREATE TABLE `tb_detailkredit` (
   `id_kredit` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `tb_detailkredit`
+--
+
+INSERT INTO `tb_detailkredit` (`id_detailkredit`, `id_nasabah`, `id_kredit`) VALUES
+(1, 2, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -49,6 +56,13 @@ CREATE TABLE `tb_dokumen` (
   `rekening_tabungan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `tb_dokumen`
+--
+
+INSERT INTO `tb_dokumen` (`id_dokumen`, `id_kredit`, `foto_identitas`, `foto_kk`, `foto_suratnikah`, `sk_karyawan`, `npwp`, `rekening_tabungan`) VALUES
+(1, 1, 'KTP.jpg', 'KK.jpg', 'surat nikah4.jpg', 'contoh-surat-keterangan-kerja-terbaru.png', 'NPWP.jpg', 'IMG_0002 (FILEminimizer).jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -64,6 +78,13 @@ CREATE TABLE `tb_kredit` (
   `bunga` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `tb_kredit`
+--
+
+INSERT INTO `tb_kredit` (`id_kredit`, `id_nasabah`, `id_marketing`, `permohonan`, `jangka_waktu`, `bunga`) VALUES
+(1, 2, 1, 25000000, '3', '2.95%');
+
 -- --------------------------------------------------------
 
 --
@@ -76,6 +97,13 @@ CREATE TABLE `tb_marketing` (
   `alamat` text NOT NULL,
   `kontak` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_marketing`
+--
+
+INSERT INTO `tb_marketing` (`id_marketing`, `nama`, `alamat`, `kontak`) VALUES
+(1, 'Marketing 1', 'Jakarta', '089635573958');
 
 -- --------------------------------------------------------
 
@@ -110,7 +138,8 @@ CREATE TABLE `tb_nasabah` (
 
 INSERT INTO `tb_nasabah` (`id_nasabah`, `nama`, `tmp_lahir`, `tgl_lahir`, `agama`, `no_identitas`, `no_npwp`, `alamat`, `lama_menetap`, `no_telprumah`, `no_hp`, `status_perkawinan`, `pendidikan`, `nama_ibukandung`, `jml_tanggungan`, `alamat_korespondensi`, `kepemilikan_rumah`, `createddate`) VALUES
 (1, 'Nouval Kurnia Firdaus', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00 00:00:00'),
-(2, 'Nouval Kurnia Firdaus', 'Tangerang', '1994-11-18', 'Islam', '3674031811940005', '18293213982123211', 'Pondok Aren, Tangerang Selatan', '25 Tahun', '0218182121', '08981231212', 'Menikah', 'SD', 'Asdfghj', '12', 'Pondok Aren Tangerang Selatan', 'Orang tua', '0000-00-00 00:00:00');
+(2, 'Nouval Kurnia Firdaus', 'Tangerang', '1994-11-18', 'Islam', '3674031811940005', '18293213982123211', 'Pondok Aren, Tangerang Selatan', '25 Tahun', '0218182121', '08981231212', 'Menikah', 'SD', 'Asdfghj', '12', 'Pondok Aren Tangerang Selatan', 'Orang tua', '0000-00-00 00:00:00'),
+(8, 'Soleh Mahfudin', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -183,8 +212,17 @@ CREATE TABLE `tb_status_validasi` (
   `id_kredit` int(5) NOT NULL,
   `id_marketing` int(5) NOT NULL,
   `status` varchar(20) NOT NULL,
-  `keterangan` text NOT NULL
+  `keterangan` text NOT NULL,
+  `datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_status_validasi`
+--
+
+INSERT INTO `tb_status_validasi` (`id_status`, `id_kredit`, `id_marketing`, `status`, `keterangan`, `datetime`) VALUES
+(1, 1, 1, 'Menunggu verifikasi', '-', '2017-08-13 06:03:02'),
+(2, 1, 1, 'Sedang di verifikasi', '', '2017-08-13 06:04:21');
 
 -- --------------------------------------------------------
 
@@ -198,18 +236,22 @@ CREATE TABLE `user_login` (
   `email` varchar(40) NOT NULL,
   `password` varchar(100) NOT NULL,
   `level` int(1) NOT NULL,
-  `id_nasabah` varchar(5) DEFAULT NULL
+  `id_nasabah` varchar(5) DEFAULT NULL,
+  `id_marketing` int(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `user_login`
 --
 
-INSERT INTO `user_login` (`id`, `name`, `email`, `password`, `level`, `id_nasabah`) VALUES
-(1, 'Nouval Kurnia Firdaus', 'admin@mail.com', 'e9e5038ade01c005d6d3e2ac2223bb4d', 1, NULL),
-(2, 'Nasabah 1', 'nasabah1@mail.com', 'c7dcc69ffc075e8615d70e5be34bd29c', 3, NULL),
-(4, 'Nouval', 'novalkrnfds@mail.com', '68b8c66a8cf9446fbde46b19ac4fff5f', 3, '1'),
-(5, 'Nouval Kurnia Firdaus', 'novalkrnfds@gmail.com', '68b8c66a8cf9446fbde46b19ac4fff5f', 3, '2');
+INSERT INTO `user_login` (`id`, `name`, `email`, `password`, `level`, `id_nasabah`, `id_marketing`) VALUES
+(1, 'Nouval Kurnia Firdaus', 'admin@bukopin.co.id', '6586aeeb2ad34660c685fdecfda33460', 1, NULL, NULL),
+(2, 'Nasabah 1', 'nasabah1@mail.com', 'c7dcc69ffc075e8615d70e5be34bd29c', 3, NULL, NULL),
+(4, 'Nouval', 'novalkrnfds@mail.com', '68b8c66a8cf9446fbde46b19ac4fff5f', 3, '1', NULL),
+(5, 'Nouval Kurnia Firdaus', 'novalkrnfds@gmail.com', '68b8c66a8cf9446fbde46b19ac4fff5f', 3, '2', NULL),
+(6, 'Asdfg', 'asd@gmail.com', 'd5273ea8580f344175d706d70c584c90', 3, '5', NULL),
+(7, 'Marketing 1', 'marketing1@bukopin.co.id', '3fb8452f758a5ec1632ecdba9a6d77a3', 2, NULL, 1),
+(15, 'Soleh Mahfudin', 'irawangamank@gmail.com', '062233cca9becb99035f435082117e30', 3, '8', NULL);
 
 --
 -- Indexes for dumped tables
@@ -287,27 +329,27 @@ ALTER TABLE `user_login`
 -- AUTO_INCREMENT for table `tb_detailkredit`
 --
 ALTER TABLE `tb_detailkredit`
-  MODIFY `id_detailkredit` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_detailkredit` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tb_dokumen`
 --
 ALTER TABLE `tb_dokumen`
-  MODIFY `id_dokumen` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_dokumen` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tb_kredit`
 --
 ALTER TABLE `tb_kredit`
-  MODIFY `id_kredit` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kredit` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tb_marketing`
 --
 ALTER TABLE `tb_marketing`
-  MODIFY `id_marketing` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_marketing` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tb_nasabah`
 --
 ALTER TABLE `tb_nasabah`
-  MODIFY `id_nasabah` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_nasabah` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `tb_pekerjaan`
 --
@@ -322,12 +364,12 @@ ALTER TABLE `tb_penghasilan`
 -- AUTO_INCREMENT for table `tb_status_validasi`
 --
 ALTER TABLE `tb_status_validasi`
-  MODIFY `id_status` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_status` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `user_login`
 --
 ALTER TABLE `user_login`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
