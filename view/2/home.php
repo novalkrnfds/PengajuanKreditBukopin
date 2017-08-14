@@ -125,9 +125,10 @@
                             <label>Status Pengajuan Kredit</label>
                             <select name="status" class="form-control" placeholder="Status Validasi" required/>
                                 <option value="">--- Pilih ---</option>
-                                <option value="Menikah">Menikah</option>
-                                <option value="Belum Menikah">Belum Menikah</option>
-                                <option value="Janda/Duda">Janda/Duda</option>
+                                <option value="Telah diverifikasi, dan dalam pengecekan dokumen">Telah diverifikasi, dan dalam pengecekan dokumen</option>
+                                <option value="Sedang dalam tahap survey rumah">Sedang dalam tahap survey rumah</option>
+                                <option value="Approved">Approved</option>
+                                <option value="Rejected">Rejected</option>
                             </select>
                         </div>
                         <div class="form-group" style="padding-bottom: 10px;">
