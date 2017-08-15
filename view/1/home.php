@@ -1,11 +1,14 @@
 <?php
-  $idnasabah = $_SESSION['id_nasabah'];
+    $status = array('0' => "Menunggu Verifikasi",
+                        '1' => "Sedang di proses verifikasi",
+                        '2' => "Telah diverifikasi, dan dalam pengecekan dokumen",
+                        '3' => "Sedang dalam tahap survey rumah",
+                        '4' => "Approved",
+                        '5' => "Rejected"
+                );
 
-  $select = mysql_query("SELECT a.id_kredit, a.id_nasabah, a.permohonan, a.jangka_waktu, b.nama, c.status FROM tb_kredit as a
-                         INNER JOIN tb_nasabah as b ON a.id_nasabah = b.id_nasabah INNER JOIN tb_status_validasi as c
-                         ON a.id_marketing = c.id_marketing WHERE b.id_nasabah = '$idnasabah'");
-  $data = mysql_fetch_array($select);
-  $count = mysql_num_rows($select);
+    $select = mysql_query("SELECT a.id_kredit, max(a.datetime) as datetime, MAX(a.status) AS status, b.*, c.*
+        FROM tb_status_validasi a INNER JOIN tb_kredit b ON a.id_kredit = b.id_kredit INNER JOIN tb_nasabah c ON b.id_nasabah = c.id_nasabah WHERE status = 4");
 ?>
 
 <section id="content">
@@ -48,25 +51,11 @@
 
                     <!-- tile body -->
                     <div class="tile-body">
-                      <?php if($data['id_kredit'] == null){ ?>
-                      <div class="alert alert-big alert-success alert-dismissable fade in">
-                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                          <h4><strong>Selamat datang!</strong> <em><?=$_SESSION['name']?></em></h4>
-                          <p style="text-align:justify;">
-                              Selamat datang di website e-Submission Credit BANK BUKOPIN. Klik tombol dibawah jika anda ingin mengajukan kredit.
-                              Perlu di ingat, setelah anda mengajukan kredit anda tidak bisa mengubah data Anda. Anda akan bisa mengubah saat
-                              ajuan kredit anda di tolak. Mohon isi data diri Anda dengan benar.
-                          </p>
-                          <p>
-                              <a href="?menu=apply_credit&data=1" class="btn btn-success">Apply Credit</a>
-                          </p>
-                      </div>
-                      <?php } ?>
-                      <br>
                       <div class="table-responsive">
                           <table class="table table-custom" id="editable-usage">
                               <thead>
                                   <tr>
+                                      <th>No</th>
                                       <th>Nama</th>
                                       <th>Permohonan Kredit</th>
                                       <th>jangka Waktu</th>
@@ -74,12 +63,16 @@
                                   </tr>
                               </thead>
                               <tbody>
-                                <?php if($count > 0){?>
+                                <?php
+                                $no = 0;
+                                while($r = mysql_fetch_array($select)){
+                                $no++; ?>
                                 <tr class="odd gradeX">
-                                    <td><?=$data['nama']?></td>
-                                    <td><?=$data['permohonan']?></td>
-                                    <td><?=$data['jangka_waktu']?></td>
-                                    <td><?=$data['status']?></td>
+                                    <td><?=$no;?></td>
+                                    <td><?=$r['nama']?></td>
+                                    <td>Rp. <?=number_format($r['permohonan'], 0, ',', '.')?></td>
+                                    <td><?=$r['jangka_waktu']?></td>
+                                    <td><?=$status[$r['status']]?></td>
                                 </tr>
                                 <?php } ?>
                               </tbody>

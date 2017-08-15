@@ -70,6 +70,16 @@
                               <a href="?menu=apply_credit&data=1" class="btn btn-success">Apply Credit</a>
                           </p>
                       </div>
+                      <?php }
+                      
+                      if($data['status'] == 4){ ?>
+                        <div class="alert alert-success alert-dismissable fade in">
+                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                          <h4><strong>Selamat datang!</strong> <em><?=$_SESSION['name']?></em></h4>
+                          <p style="text-align:justify;">
+                              Selamat permintaan pengajuan kredit Anda pada BANK BUKOPIN telah di <?=$status[$data['status']]?>. Silahkan datang ke Kantor Bukopin cabang terdekat untuk proses selanjutnya. Mohon dipastikan Anda membawa data-data Anda.
+                          </p>
+                      </div>
                       <?php } ?>
                       <br>
                       <div class="table-responsive">
