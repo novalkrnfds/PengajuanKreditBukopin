@@ -218,12 +218,12 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="username">Nama Lengkap : </label>
-                                <input type="text" name="nama" id="name" value="<?=$data['nama']?>" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" name="nama" id="name" value="<?=$data['nama']?>" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                             <div class="form-group col-md-6">
                                <label for="username">Agama: </label><br>
-                               <select class="chosen-select" style="width:500px" name="agama" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                               <select class="chosen-select" style="width:500px" name="agama" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                                    <option value="">--- Pilih ---</option>
                                    <option value="Islam" <?php if($data['agama'] == 'Islam'){echo 'selected';}?>>Islam</option>
                                    <option value="Khatolik" <?php if($data['agama'] == 'Khatolik'){echo 'selected';}?>>Khatolik</option>
@@ -238,12 +238,12 @@
 
                             <div class="form-group col-md-6">
                                 <label for="password">Tempat Lahir: </label>
-                                <input type="text" name="tmp_lahir" value="<?=$data['tmp_lahir']?>" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" name="tmp_lahir" value="<?=$data['tmp_lahir']?>" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="password">Tanggal Lahir: </label>
-                                <input type="text" name="tgl_lahir" value="<?=date("m/d/Y", strtotime($data['tgl_lahir']))?>" class="form-control datepicker" data-format="L" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" name="tgl_lahir" value="<?=date("m/d/Y", strtotime($data['tgl_lahir']))?>" class="form-control datepicker" data-format="L" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                         </div>
@@ -251,29 +251,29 @@
 
                             <div class="form-group col-md-6">
                                 <label for="password">No. Identitas: </label>
-                                <input type="text" name="no_identitas" value="<?=$data['no_identitas']?>" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" name="no_identitas" value="<?=$data['no_identitas']?>" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="password">No. NPWP : </label>
-                                <input type="text" name="no_npwp" value="<?=$data['no_npwp']?>" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" name="no_npwp" value="<?=$data['no_npwp']?>" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                         </div>
                         <div class="form-group">
                             <label for="message">Alamat saat ini: </label>
-                            <textarea class="form-control" rows="4" name="alamat" id="message" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>><?=$data['alamat']?></textarea>
+                            <textarea class="form-control" rows="4" name="alamat" id="message" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>><?=$data['alamat']?></textarea>
                         </div>
                         <div class="row">
 
                             <div class="form-group col-md-6">
                                 <label for="password">No. Telepon: </label>
-                                <input type="text" name="no_telp" value="<?=$data['no_telprumah']?>" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" name="no_telp" value="<?=$data['no_telprumah']?>" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="password">Handphone : </label>
-                                <input type="text" name="hp" value="<?=$data['no_hp']?>" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" name="hp" value="<?=$data['no_hp']?>" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                         </div>
@@ -281,7 +281,7 @@
                             <div class="form-group col-md-6">
                                 <label for="username">Status : </label>
                                 <br>
-                                <select class="chosen-select" style="width:500px" name="status_perkawinan" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <select class="chosen-select" style="width:500px" name="status_perkawinan" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                                     <option value="">--- Pilih ---</option>
                                     <option value="Menikah" <?php if($data['status_perkawinan'] == 'Menikah'){echo 'selected';}?>>Menikah</option>
                                     <option value="Belum Menikah" <?php if($data['status_perkawinan'] == 'Belum Menikah'){echo 'selected';}?>>Belum Menikah</option>
@@ -292,7 +292,7 @@
                             <div class="form-group col-md-6">
                                 <label for="username">Pendidikan Terakhir: </label>
                                 <br>
-                                <select class="chosen-select" style="width:500px" name="pendidikan" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <select class="chosen-select" style="width:500px" name="pendidikan" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                                    <option value="">--- Pilih ---</option>
                                    <option value="SD" <?php if($data['pendidikan'] == 'SD'){echo 'selected';}?>>SD</option>
                                    <option value="SLTP" <?php if($data['pendidikan'] == 'SLTP'){echo 'selected';}?>>SLTP</option>
@@ -305,23 +305,23 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="username">Nama Ibu Kandung : </label>
-                                <input type="text" value="<?=$data['nama_ibukandung']?>" name="nama_ibukandung" id="name" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" value="<?=$data['nama_ibukandung']?>" name="nama_ibukandung" id="name" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="username">Jumlah Tanggungan : </label>
-                                <input type="text" value="<?=$data['jml_tanggungan']?>" name="jml_tanggungan" id="username" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" value="<?=$data['jml_tanggungan']?>" name="jml_tanggungan" id="username" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="message">Alamat korespodensi: </label>
-                            <textarea class="form-control" rows="4" name="alamat_korespondensi" id="message" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>><?=$data['alamat_korespondensi']?></textarea>
+                            <textarea class="form-control" rows="4" name="alamat_korespondensi" id="message" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>><?=$data['alamat_korespondensi']?></textarea>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="username">Kepemilikan Rumah : </label>
                                 <br>
-                                <select class="chosen-select" style="width:500px" name="kepemilikan_rumah" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <select class="chosen-select" style="width:500px" name="kepemilikan_rumah" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                                   <option value="">--- Pilih ---</option>
                                   <option value="Sendiri" <?php if($data['kepemilikan_rumah'] == 'Sendiri'){echo 'selected';}?>>Sendiri</option>
                                   <option value="Sewa/Kontrak" <?php if($data['kepemilikan_rumah'] == 'Sewa/Kontrak'){echo 'selected';}?>>Sewa/Kontrak</option>
@@ -333,14 +333,14 @@
 
                             <div class="form-group col-md-6">
                                 <label for="username">Lama Menetap: </label>
-                                <input type="text" class="form-control" value="<?=$data['lama_menetap']?>" name="lama_menetap" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" class="form-control" value="<?=$data['lama_menetap']?>" name="lama_menetap" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
                         </div>
                     </div>
 
                     <ul class="pager">
                         <li>
-                            <input type="submit" class="btn btn-default pull-right" value="Next" name="savebiodata" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>></li>
+                            <input type="submit" class="btn btn-default pull-right" value="Next" name="savebiodata" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>></li>
                         <li class="next finish" style="display:none;"><input type="submit" class="btn btn-success" name="apply" value="Submit Pengajuan"></li>
                     </ul>
                   </form>
@@ -352,28 +352,28 @@
                             <div class="form-group col-md-6">
                                 <label for="username">Nama Perusahaan : </label>
                                 <input type="hidden" name="id_pekerjaan" value="<?=$data['id_pekerjaan']?>">
-                                <input type="text" name="nama_perusahaan" id="name" value="<?=$data['nama_perusahaan']?>" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" name="nama_perusahaan" id="name" value="<?=$data['nama_perusahaan']?>" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="password">No. Telepon Perusahaan : </label>
-                                <input type="text" name="telp_perusahaan" value="<?=$data['telp_perusahaan']?>" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" name="telp_perusahaan" value="<?=$data['telp_perusahaan']?>" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="message">Alamat Perusahaan : </label>
-                            <textarea class="form-control" rows="4" name="alamat_perusahaan" id="message" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>><?=$data['alamat_perusahaan']?></textarea>
+                            <textarea class="form-control" rows="4" name="alamat_perusahaan" id="message" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>><?=$data['alamat_perusahaan']?></textarea>
                         </div>
                         <div class="row">
 
                             <div class="form-group col-md-6">
                                 <label for="password">No. Fax : </label>
-                                <input type="text" name="fax_perusahaan" value="<?=$data['fax_perusahaan']?>" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" name="fax_perusahaan" value="<?=$data['fax_perusahaan']?>" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="password">Jenis Usaha : </label>
-                                <input type="text" name="jenis_usaha" value="<?=$data['jenis_usaha']?>" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" name="jenis_usaha" value="<?=$data['jenis_usaha']?>" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                         </div>
@@ -381,13 +381,13 @@
 
                             <div class="form-group col-md-6">
                                 <label for="password">Jabatan/Pangkat : </label>
-                                <input type="text" name="jabatan" value="<?=$data['jabatan']?>" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" name="jabatan" value="<?=$data['jabatan']?>" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="password">Bidang Pekerjaan : </label>
                                 <br>
-                                <select class="chosen-select" style="width:500px" name="bidang_pekerjaan" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <select class="chosen-select" style="width:500px" name="bidang_pekerjaan" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                                     <option value="">--- Pilih ---</option>
                                     <option value="Humas" <?php if($data['bidang_pekerjaan'] == 'Humas'){echo 'selected';}?>>Humas</option>
                                     <option value="Keuangan" <?php if($data['bidang_pekerjaan'] == 'Keuangan'){echo 'selected';}?>>Keuangan</option>
@@ -400,13 +400,13 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="password">Masa Kerja: </label>
-                                <input type="text" name="masa_kerja" value="<?=$data['masa_kerja']?>" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" name="masa_kerja" value="<?=$data['masa_kerja']?>" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="password">Status Bekerja : </label>
                                 <br>
-                                <select class="chosen-select" style="width:500px" name="status" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <select class="chosen-select" style="width:500px" name="status" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                                 		<option value="">--- Pilih ---</option>
                                 		<option value="Karyawan Tetap" <?php if($data['status'] == 'Karyawan Tetap'){echo 'selected';}?>>Karyawan Tetap</option>
                                 		<option value="Kontrak" <?php if($data['status'] == 'Kontrak'){echo 'selected';}?>>Kontrak</option>
@@ -417,41 +417,41 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="username">Nama Atasan Langsung : </label>
-                                <input type="text" name="nm_atasan" value="<?=$data['nm_atasan']?>" id="name" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" name="nm_atasan" value="<?=$data['nm_atasan']?>" id="name" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="username">No. Telelpon Atasan : </label>
-                                <input type="text" name="telp_atasan" value="<?=$data['telp_atasan']?>" id="username" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" name="telp_atasan" value="<?=$data['telp_atasan']?>" id="username" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="username">Nama Kepala Personalia : </label>
-                                <input type="text" name="nm_kep_personalia" value="<?=$data['nm_kep_personalia']?>" id="name" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" name="nm_kep_personalia" value="<?=$data['nm_kep_personalia']?>" id="name" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="username">No. Telelpon Personalia : </label>
-                                <input type="text" name="telp_personalia" value="<?=$data['telp_personalia']?>" id="username" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" name="telp_personalia" value="<?=$data['telp_personalia']?>" id="username" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="username">Nama Perusahaan Sebelumnya : </label>
-                                <input type="text" name="nm_company_before" value="<?=$data['nm_company_before']?>" id="name" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" name="nm_company_before" value="<?=$data['nm_company_before']?>" id="name" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="username">Masa Kerja Diperusahaan Sebelumnya : </label>
-                                <input type="text" name="masa_kerja_before" value="<?=$data['masa_kerja_before']?>" id="username" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="text" name="masa_kerja_before" value="<?=$data['masa_kerja_before']?>" id="username" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
                         </div>
                     </div>
 
                     <ul class="pager">
                         <li>
-                            <input type="submit" class="btn btn-default pull-right" value="Next" name="savepekerjaan" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>></li>
+                            <input type="submit" class="btn btn-default pull-right" value="Next" name="savepekerjaan" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>></li>
                         <li class="next finish" style="display:none;"><input type="submit" class="btn btn-success" name="apply" value="Submit Pengajuan"></li>
                     </ul>
                   </form>
@@ -463,24 +463,24 @@
                             <div class="form-group col-md-6">
                                 <input type="hidden" name="id_penghasilan" value="<?=$data['id_penghasilan']?>">
                                 <label for="username">Pendapatan Pokok : </label>
-                                <input type="number" minlength="0" maxlength="12" value="<?=$data['pendapatan_pokok']?>" name="pendapatan_pokok" onchange="totalPendapatan();" id="pendapatan_pokok" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="number" minlength="0" maxlength="12" value="<?=$data['pendapatan_pokok']?>" name="pendapatan_pokok" onchange="totalPendapatan();" id="pendapatan_pokok" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="password">Tunjangan / Pendapatan Lain : </label>
-                                <input type="number" minlength="0" maxlength="12" value="<?=$data['tunjangan']?>" name="tunjangan" onchange="totalPendapatan();" id="tunjangan" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="number" minlength="0" maxlength="12" value="<?=$data['tunjangan']?>" name="tunjangan" onchange="totalPendapatan();" id="tunjangan" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
                         </div>
                         <div class="row">
 
                             <div class="form-group col-md-6">
                                 <label for="password">Penghasilan Istri / Suami : </label>
-                                <input type="number" minlength="0" maxlength="12" value="<?=$data['penghasilan']?>" name="penghasilan" onchange="totalPendapatan();" id="penghasilan" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="number" minlength="0" maxlength="12" value="<?=$data['penghasilan']?>" name="penghasilan" onchange="totalPendapatan();" id="penghasilan" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="password">Total : </label>
-                                <input type="number" minlength="0" maxlength="12" value="<?=$data['total_penghasilan']?>" name="total_penghasilan" id="total_penghasilan" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?> >
+                                <input type="number" minlength="0" maxlength="12" value="<?=$data['total_penghasilan']?>" name="total_penghasilan" id="total_penghasilan" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?> >
                             </div>
 
                         </div>
@@ -488,30 +488,30 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="username">Biaya rutin rumah tangga : </label>
-                                <input type="number" minlength="0" maxlength="12" value="<?=$data['biaya_rutin']?>" name="biaya_rutin" id="biaya_rutin" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="number" minlength="0" maxlength="12" value="<?=$data['biaya_rutin']?>" name="biaya_rutin" id="biaya_rutin" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="username">Angsuran pinjaman lain : </label>
-                                <input type="number" minlength="0" maxlength="12" value="<?=$data['angsuran_lain']?>" name="angsuran_lain" id="angsuran_lain" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="number" minlength="0" maxlength="12" value="<?=$data['angsuran_lain']?>" name="angsuran_lain" id="angsuran_lain" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="username">Biaya lain-lain : </label>
-                                <input type="number" minlength="0" maxlength="12" value="<?=$data['biaya_lain']?>" name="biaya_lain" id="biaya_lain" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="number" minlength="0" maxlength="12" value="<?=$data['biaya_lain']?>" name="biaya_lain" id="biaya_lain" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="username">Total : </label>
-                                <input type="number" minlength="0" maxlength="12" value="<?=$data['total_pengeluaran']?>" name="total_pengeluaran" id="total_pengeluaran" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="number" minlength="0" maxlength="12" value="<?=$data['total_pengeluaran']?>" name="total_pengeluaran" id="total_pengeluaran" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
                         </div>
                     </div>
 
                     <ul class="pager">
                         <li>
-                            <input type="submit" class="btn btn-default pull-right" value="Next" name="savepenghasilan" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>></li>
+                            <input type="submit" class="btn btn-default pull-right" value="Next" name="savepenghasilan" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>></li>
                         <li class="next finish" style="display:none;"><input type="submit" class="btn btn-success" name="apply" value="Submit Pengajuan"></li>
                     </ul>
                   </form>
@@ -527,24 +527,24 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="username">Foto Identitas : </label>
-                                <input type="file" class="filestyle" data-buttonText="Find Image" accept="image/*" name="identitas" data-iconName="fa fa-inbox" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="file" class="filestyle" data-buttonText="Find Image" accept="image/*" name="identitas" data-iconName="fa fa-inbox" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="password">Foto Kartu Keluarga : </label>
-                                <input type="file" class="filestyle" data-buttonText="Find Image" accept="image/*" name="kk" data-iconName="fa fa-inbox" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="file" class="filestyle" data-buttonText="Find Image" accept="image/*" name="kk" data-iconName="fa fa-inbox" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
                         </div>
                         <div class="row">
 
                             <div class="form-group col-md-6">
                                 <label for="password">Foto Surat Nikah : </label>
-                                <input type="file" class="filestyle" data-buttonText="Find Image" accept="image/*" name="surat_nikah" data-iconName="fa fa-inbox" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="file" class="filestyle" data-buttonText="Find Image" accept="image/*" name="surat_nikah" data-iconName="fa fa-inbox" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="password">Foto Surat Keterangan Karyawan : </label>
-                                <input type="file" class="filestyle" data-buttonText="Find Image" accept="image/*" name="sk" data-iconName="fa fa-inbox" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="file" class="filestyle" data-buttonText="Find Image" accept="image/*" name="sk" data-iconName="fa fa-inbox" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                         </div>
@@ -552,12 +552,12 @@
 
                             <div class="form-group col-md-6">
                                 <label for="password">Foto NPWP : </label>
-                                <input type="file" class="filestyle" data-buttonText="Find Image" accept="image/*" name="npwp" data-iconName="fa fa-inbox" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="file" class="filestyle" data-buttonText="Find Image" accept="image/*" name="npwp" data-iconName="fa fa-inbox" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="password">Foto Rekening Tabungan : </label>
-                                <input type="file" class="filestyle" data-buttonText="Find Image" accept="image/*" name="rekening" data-iconName="fa fa-inbox" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="file" class="filestyle" data-buttonText="Find Image" accept="image/*" name="rekening" data-iconName="fa fa-inbox" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                         </div>
@@ -565,12 +565,12 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="username">Permohonan Kredit (Jumlah) : </label>
-                                <input type="number" minlength="0" maxlength="12" name="permohonan_kredit" id="permohonan_kredit" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>>
+                                <input type="number" minlength="0" maxlength="12" name="permohonan_kredit" id="permohonan_kredit" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="username">Jangka Watu : </label>
-                                <input type="text" name="jangka_waktu" id="jangka_waktu" class="form-control" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?> >
+                                <input type="text" name="jangka_waktu" id="jangka_waktu" class="form-control" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?> >
                             </div>
                         </div>
                         <div class="row">
@@ -582,7 +582,7 @@
                     </div>
 
                     <ul class="pager">
-                        <li><input type="submit" class="btn btn-success pull-right" name="apply" value="Submit Pengajuan" <?php if(($disable['status'] == 4) || ($disable['status'] == 3) || ($disable['status'] == 2) || ($disable['status'] == 1) || ($disable['status'] == 0)){ echo "disabled";}?>></li>
+                        <li><input type="submit" class="btn btn-success pull-right" name="apply" value="Submit Pengajuan" <?php if(($disable['status'] == "") || ($disable['status'] == 5)){} else { echo "disabled";}?>></li>
                     </ul>
                   </form>
                   <?php } ?>

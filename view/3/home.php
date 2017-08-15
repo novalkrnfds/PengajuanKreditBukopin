@@ -227,9 +227,9 @@
                                         </thead>
                                         <tbody>
                                         <?php 
-                                            $sql = mysql_query("SELECT c.status, c.datetime FROM tb_kredit as a
-                                                                INNER JOIN tb_nasabah as b ON a.id_nasabah = b.id_nasabah INNER JOIN tb_status_validasi as c
-                                                                ON a.id_marketing = c.id_marketing WHERE b.id_nasabah = '$idnasabah' order by c.datetime");
+                                            $sql = mysql_query("SELECT c.status, c.datetime FROM tb_kredit a
+                                                                INNER JOIN tb_nasabah b ON a.id_nasabah = b.id_nasabah INNER JOIN tb_status_validasi as c
+                                                                ON a.id_kredit = c.id_kredit WHERE a.id_nasabah = '$idnasabah' order by c.datetime");
                                             while($r = mysql_fetch_array($sql)){
                                         ?>
                                             <tr>

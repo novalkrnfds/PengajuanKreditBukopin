@@ -7,8 +7,8 @@
                     '5' => "Rejected"
               );
 
-    $select = mysql_query("SELECT a.id_kredit, max(a.datetime) as datetime, MAX(a.status) AS status, b.*, c.*
-    FROM tb_status_validasi a INNER JOIN tb_kredit b ON a.id_kredit = b.id_kredit INNER JOIN tb_nasabah c ON b.id_nasabah = c.id_nasabah");
+    $select = mysql_query("SELECT a.id_kredit, max(a.status) as status, b., c.
+    FROM tb_status_validasi a INNER JOIN tb_kredit b ON a.id_kredit = b.id_kredit INNER JOIN tb_nasabah c ON b.id_nasabah = c.id_nasabah GROUP BY a.id_kredit");
     $count = mysql_num_rows($select);
 
     if(isset($_POST['save'])){
